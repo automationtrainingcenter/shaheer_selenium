@@ -1,0 +1,9 @@
+WebElement interface methods
+This interface contains methods to perform common actions on the element
+1. click() is used to click on an element
+2. sendKeys(CharSequence arg) is used to type some data in a text field and text
+area. This method will send data character by character.
+3. clear() is used to clear existing data in the text field or text area.
+4. getText() returns String value which is an inner text of the given element if any
+5. submit() is used to submit a form to the server if that form submit button is
+implemnted using <input> tag

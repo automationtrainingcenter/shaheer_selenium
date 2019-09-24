@@ -52,4 +52,22 @@ value
 syntax: 
 	"//tagName[@att_name = 'att_value']"
 
+The below two methods are generally used to locate multiple elements
+7. className(String arg) : is used to locate either single or multiple elements using
+class name of the element.
+
+Note: there is a probability a class attribute can have multiple class names
+eg: in above element class attribute value is class = "inputtext _58mg _2ph-"
+in above class attribute value we have 3 classes and we have to use any one class name
+in className() argument, we are not allowed to used multiple class names in 
+className() argument
+	
+	By.className("inputtext") is valid
+	By.className("_58mg") is also valid
+	By.className("_2ph-") is also valid
+	By.className("inputtext _58mg") is invalid because the argument contains two class names
+
+8. tagName(String arg): is used to locate either single or multiple elements using 
+name of the tag.
+
 	
