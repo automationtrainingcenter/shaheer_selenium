@@ -40,9 +40,11 @@ of the value attribute
 10. deselectByVisibleText(String innerTextOptionTag) is used to deselect an 
 option based on the inner text of the option tag
 
+11. deselectAll() is used to deselect all the selected options of a list box
+
 All these are instance metheds so we have create an object of the Select class to call these
 methods
 Syntax to create an object of Select class
 	Select selectObj = new Select(WebElemnet select_tag_ele)
-by above syntanx first we have to locate Select tag and store in a WebElement reference
+by above syntax first we have to locate Select tag and store in a WebElement reference
 then pass that reference to the Select class constructor.
