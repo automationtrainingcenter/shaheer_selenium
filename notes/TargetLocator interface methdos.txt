@@ -1,0 +1,10 @@
+TargetLocator interface methods
+1. alert() - returns an Alert interface reference
+is used to switch driver focus from current web page to existing alert
+on the page. if no alert is availble in the page then this
+method will return NoSuchAlertException
+
+2. activeElement() - returns a WebElement reference
+is used to switch driver focus to the active element in the current web page.
+if there is no active elemetn in the web page then this method will throw 
+NoSuchElementException
