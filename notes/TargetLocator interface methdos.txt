@@ -9,7 +9,7 @@ is used to switch driver focus to the active element in the current web page.
 if there is no active elemetn in the web page then this method will throw 
 NoSuchElementException
 
-// frames handling
+Frames handling methods
 3. frame(int index) - used to switch driver focus from main page to any frame
 based on index number of the frame
 
@@ -25,3 +25,8 @@ to parent frame
 7. defaultContent() - is used to swithc driver focus from any frame to main page
 
 // all the frame methods returns WebDriver reference
+
+
+Window handling method
+8. window(String windowID) is used to switch the driver focus from one
+window to another window based on windowID
