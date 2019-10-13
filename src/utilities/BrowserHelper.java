@@ -7,7 +7,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 
 public class BrowserHelper {
-	static WebDriver driver;
+	static protected WebDriver driver;
 
 	/*
 	 * this method accepts folder name which is a folder in your project root folder and 
