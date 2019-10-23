@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -14,7 +15,7 @@ import utilities.BrowserHelper;
 public class NSEIndiaDemoOne extends BrowserHelper {
 
 	public static void main(String[] args) {
-		String companyCode = "WIPRO";
+		String companyCode = "ASIANPAINT";
 		openBrowser("chrome",
 				"https://www.nseindia.com/live_market/dynaContent/live_watch/pre_open_market/pre_open_market.htm");
 
@@ -23,11 +24,14 @@ public class NSEIndiaDemoOne extends BrowserHelper {
 			WebElement tbody = wait
 					.until(ExpectedConditions.presenceOfElementLocated(By.cssSelector("#preOpenNiftyTab>tbody")));
 			List<WebElement> rows = tbody.findElements(By.tagName("tr"));
+			JavascriptExecutor js = (JavascriptExecutor) driver;
 			for (int i = 2; i < rows.size(); i++) {
 				List<WebElement> cells = rows.get(i).findElements(By.tagName("td"));
 				if (cells.get(0).getText().equals(companyCode)) {
 					System.out.println("share price of " + companyCode + " = " + cells.get(3).getText());
-					cells.get(0).findElement(By.tagName("a")).click();
+					WebElement cell = cells.get(0).findElement(By.tagName("a"));
+					js.executeScript("arguments[0].scrollIntoView()", cell);
+					cell.click();
 					break;
 				}
 			}
@@ -40,7 +44,13 @@ public class NSEIndiaDemoOne extends BrowserHelper {
 //				driver.switchTo().window(windowIds.get(0));
 //			}
 		}
+		sleep(3000);
 		closeBrowser();
+	}
+
+	private static void click() {
+		// TODO Auto-generated method stub
+		
 	}
 
 }
