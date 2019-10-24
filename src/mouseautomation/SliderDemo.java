@@ -7,6 +7,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import utilities.BrowserHelper;
+import utilities.JavascriptHelper;
 
 public class SliderDemo extends BrowserHelper {
 	public static void main(String[] args) {
@@ -15,6 +16,7 @@ public class SliderDemo extends BrowserHelper {
 		if (wait.until(ExpectedConditions.urlToBe("https://www.axisbank.com/retail/calculators/fd-calculator"))) {
 			sleep(5000);
 			WebElement sliderHead = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[@class='irs-single']")));
+			JavascriptHelper.scrollPage(driver, 0, 300);
 			Actions actions = new Actions(driver);
 			actions.clickAndHold(sliderHead).moveByOffset(50, 0).release().build().perform();
 			sleep(2000);
