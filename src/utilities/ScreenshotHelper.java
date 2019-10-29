@@ -32,7 +32,7 @@ public class ScreenshotHelper {
 	}
 
 	// helper method to capture the screenshot
-	public static void captureScreenshot(WebDriver driver, String folderName, String fileName) {
+	public static String captureScreenshot(WebDriver driver, String folderName, String fileName) {
 		// type cast webdriver object reference to TakesScreenshot interface reference
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File srcImg = ts.getScreenshotAs(OutputType.FILE);
@@ -44,6 +44,7 @@ public class ScreenshotHelper {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		return desImg.getAbsolutePath();
 	}
 	
 	// helper method for multiple screenshots
