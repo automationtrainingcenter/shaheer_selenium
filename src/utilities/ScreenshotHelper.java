@@ -18,6 +18,7 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.io.FileHandler;
 
 public class ScreenshotHelper {
 	private static String getTimeStamp() {
@@ -38,8 +39,10 @@ public class ScreenshotHelper {
 		File srcImg = ts.getScreenshotAs(OutputType.FILE);
 		File desImg = new File(getPath(folderName, fileName));
 		try {
-			BufferedImage bi = ImageIO.read(srcImg);
-			ImageIO.write(bi, "png", desImg);
+//			BufferedImage bi = ImageIO.read(srcImg);
+//			ImageIO.write(bi, "png", desImg);
+			// using FileHandle class introduced in selenium 3.6
+			FileHandler.copy(srcImg, desImg);
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
