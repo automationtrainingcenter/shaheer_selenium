@@ -29,5 +29,6 @@
 	<classpathentry kind="lib" path="E:/selenium/softwares/extentreports-4.0.9/dependency/mongodb-driver-3.3.0.jar"/>
 	<classpathentry kind="lib" path="E:/selenium/softwares/extentreports-4.0.9/dependency/mongodb-driver-core-3.3.0.jar"/>
 	<classpathentry kind="lib" path="E:/selenium/softwares/extentreports-4.0.9/dependency/testng-6.9.10.jar"/>
+	<classpathentry kind="lib" path="E:/selenium/softwares/mysql-connector-java-8.0.12.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
